@@ -1,6 +1,3 @@
-# Sistema de Recomendación con Python 
-Hecho por: Gerardo1909
-Correo : gerardotoboso1909@gmail.com
+# Sistemas de recomendación en Python
 
-# Descripción del proyecto
-Mi primer sistema de recomendación realizado en Python.
+Este es un repositorio en donde estaré dejando notebooks y scripts que usé para desarrollar diferentes sistemas de recomendación en Python.

@@ -1,20 +1,9 @@
-# to replicate -> conda env create --file environment.yml
-name: SisRecomendacionPy
+name: SisRecomendacion
 channels:
-  - anaconda
   - conda-forge
   - defaults
 dependencies:
-  - fs
-  - jupyter
-  - jupyterlab
-  - pathlib
-  - ipykernel
-  - pandas
-  - scikit-learn
-  - matplotlib=3.4.3
-  - seaborn=0.11.2
-  - numpy
-  - scipy
-  - statsmodels
+  - pandas=2.2.2
   - python=3.12.4
+  - pyprojroot=0.3.0
+prefix: /home/gerardo19/anaconda3/envs/SisRecomendacion
