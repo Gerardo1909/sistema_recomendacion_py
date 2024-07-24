@@ -4,8 +4,19 @@
 
 import pandas as pd
 
-def recomendar_peli(title:str, cosine_sim, df):
-    
+def recomendar_peli(title: str, cosine_sim, df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Función que recomienda películas similares a una dada.
+
+    Parámetros:
+    - title (str): Título de la película de referencia.
+    - cosine_sim : Matriz de similitud coseno entre películas.
+    - df (pd.DataFrame): DataFrame con los datos de las películas.
+
+    Retorna:
+    - recommendations (pd.DataFrame): DataFrame con las películas recomendadas y sus puntuaciones de similitud.
+    """
+
     # Obtener el índice de la película que coincide con el título
     idx = df[df['title'] == title].index[0]
 
