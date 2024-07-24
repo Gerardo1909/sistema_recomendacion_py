@@ -30,3 +30,47 @@ def plot_important_terms_for_movie(movie_title:str, df, vectorizer, tfidf_matrix
     plt.title(f'Términos más importantes para "{movie_title}"')
     plt.gca().invert_yaxis()  # Para que el término más importante esté en la parte superior
     plt.show()
+    
+    
+def limpiar_ids(x):
+    try:
+        return int(x)
+    except:
+        return np.nan
+    
+def obtener_director(x):
+    for i in x:
+        if i['job'] == 'Director':
+            return i['name']
+    return np.nan
+
+def generar_lista(x, cantidad_elementos:int):
+    if isinstance(x, list):
+        names = [i['name'] for i in x]
+        return names
+    
+        # Chequeo si hay más de 'cantidad_elementos' en la lista, si hay más retorno solo los indicados
+        # de no ser así devuelvo la lista completa
+        if len(names) > cantidad_elementos:
+            return names[:cantidad_elementos]
+        else:
+            return names
+        
+    # si no es una lista retorno una lista vacía
+    return []
+
+def procesar_nombre(x):
+    
+    if isinstance(x, list):
+        # Quito espacios y lo llevo a minusculas
+        return [str.lower(i.replace(" ", "")) for i in x]
+    else:
+        # Chequeo si hay director, de no ser así devuelvo un string vacío
+        if isinstance(x, str):
+            return str.lower(x.replace(" ", ""))
+        else:
+            return ''
+        
+def juntar_features(x):
+    return ' '.join(x['keywords']) + ' ' + ' '.join(x['cast']) + ' ' + x['director'] + ' ' + ' '.join(x['genres'])
+        
