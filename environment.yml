@@ -1,9 +1,0 @@
-name: SisRecomendacion
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - pandas=2.2.2
-  - python=3.12.4
-  - pyprojroot=0.3.0
-prefix: /home/gerardo19/anaconda3/envs/SisRecomendacion
